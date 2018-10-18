@@ -1,7 +1,7 @@
 {
-  "name": "react-sortable-tree-theme-minimal",
-  "version": "0.0.13",
-  "description": "Minimal theme for react-sortable-tree",
+  "name": "react-sortable-tree-theme-zebra",
+  "version": "0.0.1",
+  "description": "Striped, flat-ish theme for react-sortable-tree. Based on react-sortable-tree-theme-minimal",
   "scripts": {
     "build": "npm run clean && cross-env NODE_ENV=production TARGET=umd webpack --bail",
     "build:demo": "npm run clean:demo && cross-env NODE_ENV=production TARGET=demo webpack --bail",
@@ -19,12 +19,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lifejuggler/react-sortable-tree-theme-minimal"
+    "url": "https://github.com/mronkain/react-sortable-tree-theme-zebra"
   },
-  "homepage": "https://github.com/lifejuggler/react-sortable-tree-theme-minimal",
-  "bugs": "https://github.com/lifejuggler/react-sortable-tree-theme-minimal/issues",
+  "homepage": "https://github.com/mronkain/react-sortable-tree-theme-zebra",
+  "bugs": "https://github.com/mronkain/react-sortable-tree-theme-zebra/issues",
   "authors": [
-    "Tom Choi"
+    "Tom Choi",
+    "mronkain"
   ],
   "license": "MIT",
   "jest": {

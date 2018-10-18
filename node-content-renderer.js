@@ -13,7 +13,7 @@ function isDescendant(older, younger) {
 }
 
 // eslint-disable-next-line react/prefer-stateless-function
-class MinimalThemeNodeContentRenderer extends Component {
+class ZebraThemeNodeContentRenderer extends Component {
   render() {
     const {
       scaffoldBlockPxWidth,
@@ -160,7 +160,7 @@ class MinimalThemeNodeContentRenderer extends Component {
   }
 }
 
-MinimalThemeNodeContentRenderer.defaultProps = {
+ZebraThemeNodeContentRenderer.defaultProps = {
   buttons: [],
   canDrag: false,
   canDrop: false,
@@ -180,7 +180,7 @@ MinimalThemeNodeContentRenderer.defaultProps = {
   rowDirection: 'ltr'
 };
 
-MinimalThemeNodeContentRenderer.propTypes = {
+ZebraThemeNodeContentRenderer.propTypes = {
   buttons: PropTypes.arrayOf(PropTypes.node),
   canDrag: PropTypes.bool,
   className: PropTypes.string,
@@ -216,4 +216,4 @@ MinimalThemeNodeContentRenderer.propTypes = {
   rowDirection: PropTypes.string
 };
 
-export default MinimalThemeNodeContentRenderer;
+export default ZebraThemeNodeContentRenderer;

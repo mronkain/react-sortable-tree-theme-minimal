@@ -2,7 +2,7 @@ import React, { Component, Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import styles from './tree-node-renderer.scss';
 
-class MinimalThemeTreeNodeRenderer extends Component {
+class ZebraThemeTreeNodeRenderer extends Component {
   constructor (props) {
     super(props)
 
@@ -71,7 +71,7 @@ class MinimalThemeTreeNodeRenderer extends Component {
     );
   }
 }
-MinimalThemeTreeNodeRenderer.defaultProps = {
+ZebraThemeTreeNodeRenderer.defaultProps = {
   swapFrom: null,
   swapDepth: null,
   swapLength: null,
@@ -80,7 +80,7 @@ MinimalThemeTreeNodeRenderer.defaultProps = {
   rowDirection: 'ltr'
 };
 
-MinimalThemeTreeNodeRenderer.propTypes = {
+ZebraThemeTreeNodeRenderer.propTypes = {
   treeIndex: PropTypes.number.isRequired,
   swapFrom: PropTypes.number,
   swapDepth: PropTypes.number,
@@ -106,4 +106,4 @@ MinimalThemeTreeNodeRenderer.propTypes = {
   ).isRequired
 };
 
-export default MinimalThemeTreeNodeRenderer;
+export default ZebraThemeTreeNodeRenderer;

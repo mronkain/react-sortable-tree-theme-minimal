@@ -1,19 +1,18 @@
-# Minimal React Sortable Tree Theme
-<img alt="theme appearance" src="./example-resource/main.png" width="500">
+# Striped, minimal-ish React Sortable Tree Theme
 
 ## Features
-* Minimalistic Theme for React Sortable Tree
+* Striped and somewhat minimalistic Theme for React Sortable Tree
 
 ## Usage
 
 ```sh
-npm install --save react-sortable-tree-theme-minimal
+npm install --save react-sortable-tree-theme-zebra
 ```
 
 ```jsx
 import React, { Component } from 'react';
 import SortableTree from 'react-sortable-tree';
-import FileExplorerTheme from 'react-sortable-tree-theme-minimal';
+import ZebraTheme from 'react-sortable-tree-theme-zebra';
 
 export default class Tree extends Component {
   constructor(props) {
@@ -30,7 +29,7 @@ export default class Tree extends Component {
         <SortableTree
           treeData={this.state.treeData}
           onChange={treeData => this.setState({ treeData })}
-          theme={FileExplorerTheme}
+          theme={ZebraTheme}
         />
       </div>
     );
