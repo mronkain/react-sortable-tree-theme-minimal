@@ -63,10 +63,7 @@ class ZebraThemeNodeContentRenderer extends Component {
                 <div
                   // eslint-disable-next-line react/no-array-index-key
                   key={index}
-                  className={classnames(
-                    `${styles.loadingCirclePoint}`,
-                    rowDirectionClass
-                  )}
+                  className={`${styles.loadingCirclePoint}`}
                 />
               ))}
             </div>
@@ -74,7 +71,7 @@ class ZebraThemeNodeContentRenderer extends Component {
         );
       } else {
         // Show the handle used to initiate a drag-and-drop
-        handle = connectDragSource(<div className={`${styles.moveHandle}`} />, {
+        handle = connectDragSource(<div className={`${styles.moveHandle}`}><span className="fa fa-bars" /></div> , {
           dropEffect: 'copy',
         });
       }
@@ -82,6 +79,7 @@ class ZebraThemeNodeContentRenderer extends Component {
     const nodeContent = connectDragPreview( <div
         className={
           styles.rowContents +
+          (treeIndex % 2 === 0 ? ` ${styles.rowContentsOdd}` : '') +
           (isSearchMatch ? ` ${styles.rowSearchMatch}` : '') +
           (isSearchFocus ? ` ${styles.rowSearchFocus}` : '') +
           (!canDrag ? ` ${styles.rowContentsDragDisabled}` : '')

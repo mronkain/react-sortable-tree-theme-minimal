@@ -1,7 +1,9 @@
 # Striped, minimal-ish React Sortable Tree Theme
+<img alt="theme appearance" src="./example-resource/main.png" width="411">
 
 ## Features
 * Striped and somewhat minimalistic Theme for React Sortable Tree
+* Uses fa-bars from fontawesome as the drag handle. The component assumes that fontawesome is already imported in to the page
 
 ## Usage
 
