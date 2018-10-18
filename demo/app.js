@@ -12,14 +12,14 @@ class App extends Component {
       searchFocusIndex: 0,
       searchFoundCount: null,
       treeData: [
-        { title: 'This is the Full Node Drag theme' },
-        { title: 'You can click anywhere on the node to drag it' },
+        { title: 'Every other node is striped' },
+        { title: 'Dragging only from handles which are also striped' },
         {
           title: 'This node has dragging disabled',
-          subtitle: 'Note how the hover behavior is different',
+          subtitle: 'No handle',
           dragDisabled: true,
         },
-        { title: 'Chicken', children: [{ title: 'Egg' }] },
+        { title: 'Zebra', children: [{ title: 'Giraffe', children: [{ title:'Zeraffe' }] }] },
       ],
     };
     this.updateTreeData = this.updateTreeData.bind(this);
@@ -90,7 +90,7 @@ class App extends Component {
         style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
       >
         <div style={{ flex: '0 0 auto', padding: '0 15px' }}>
-          <h3>Full Node Drag Theme</h3>
+          <h3>Zebra Theme</h3>
           <button onClick={this.expandAll}>Expand All</button>
           <button onClick={this.collapseAll}>Collapse All</button>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
