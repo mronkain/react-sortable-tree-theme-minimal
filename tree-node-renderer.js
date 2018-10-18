@@ -7,20 +7,6 @@ class ZebraThemeTreeNodeRenderer extends Component {
     super(props)
 
     this.state = {}
-    this.bound = {
-      handleMouseOver: this.handleMouseOver.bind(this),
-      handleMouseLeave: this.handleMouseLeave.bind(this)
-    }
-  }
-
-  handleMouseOver () {
-    if (!this.state.highlight) {
-      this.setState({highlight: true})
-    }
-  }
-
-  handleMouseLeave () {
-    this.setState({highlight: false})
   }
 
   render() {
@@ -54,7 +40,7 @@ class ZebraThemeTreeNodeRenderer extends Component {
     }
 
     return connectDropTarget(
-      <div {...otherProps} onMouseOver={this.bound.handleMouseOver} onMouseLeave={this.bound.handleMouseLeave} {...otherProps} onFocus={ () => {} } className={styles.node + (this.state.highlight ? ` ${styles.highlight}` : '') + (dropType ? ` ${styles[dropType]}` : '')}>
+      <div {...otherProps} {...otherProps} onFocus={ () => {} } className={styles.node + (this.state.highlight ? ` ${styles.highlight}` : '') + (dropType ? ` ${styles[dropType]}` : '')}>
         <div
           className={styles.nodeContent}
           style={{paddingLeft: scaffoldBlockPxWidth * scaffoldBlockCount}}

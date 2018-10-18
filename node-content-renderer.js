@@ -50,6 +50,35 @@ class ZebraThemeNodeContentRenderer extends Component {
 
     const isDraggedDescendant = draggedNode && isDescendant(draggedNode, node);
     const isLandingPadActive = !didDrop && isDragging;
+
+    let handle;
+    if (canDrag) {
+      if (typeof node.children === 'function' && node.expanded) {
+        // Show a loading symbol on the handle when the children are expanded
+        //  and yet still defined by a function (a callback to fetch the children)
+        handle = (
+          <div className={`${styles.loadingHandle}`}>
+            <div className={`${styles.loadingCircle}`}>
+              {[...new Array(12)].map((_, index) => (
+                <div
+                  // eslint-disable-next-line react/no-array-index-key
+                  key={index}
+                  className={classnames(
+                    `${styles.loadingCirclePoint}`,
+                    rowDirectionClass
+                  )}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      } else {
+        // Show the handle used to initiate a drag-and-drop
+        handle = connectDragSource(<div className={`${styles.moveHandle}`} />, {
+          dropEffect: 'copy',
+        });
+      }
+    }
     const nodeContent = connectDragPreview( <div
         className={
           styles.rowContents +
@@ -58,6 +87,7 @@ class ZebraThemeNodeContentRenderer extends Component {
           (!canDrag ? ` ${styles.rowContentsDragDisabled}` : '')
         }
       >
+        {handle}
         <div className={styles.rowLabel}>
           <span
             className={
@@ -150,9 +180,7 @@ class ZebraThemeNodeContentRenderer extends Component {
               ...style,
             }}
           >
-            {canDrag
-              ? connectDragSource(nodeContent, { dropEffect: 'copy' })
-              : nodeContent}
+            {nodeContent}
           </div>
         </div>
       </div>
